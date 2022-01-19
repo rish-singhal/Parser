@@ -80,7 +80,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/rishabhsinghal/work/solidity/parser/src/AST/evaluateAST.h">
+			<Option target="parser"/>
+		</Unit>
+		<Unit filename="/Users/rishabhsinghal/work/solidity/parser/src/AST/node.h">
+			<Option target="parser"/>
+		</Unit>
+		<Unit filename="/Users/rishabhsinghal/work/solidity/parser/src/Parser/parser.cpp">
+			<Option target="parser"/>
+		</Unit>
+		<Unit filename="/Users/rishabhsinghal/work/solidity/parser/src/Parser/parser.h">
+			<Option target="parser"/>
+		</Unit>
 		<Unit filename="/Users/rishabhsinghal/work/solidity/parser/src/main.cpp">
+			<Option target="parser"/>
+		</Unit>
+		<Unit filename="/Users/rishabhsinghal/work/solidity/parser/src/solver.h">
 			<Option target="parser"/>
 		</Unit>
 		<Unit filename="/Users/rishabhsinghal/work/solidity/parser/CMakeLists.txt">

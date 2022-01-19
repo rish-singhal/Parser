@@ -129,6 +129,30 @@ parser/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/build
 .PHONY : parser/fast
 
+src/Parser/parser.o: src/Parser/parser.cpp.o
+.PHONY : src/Parser/parser.o
+
+# target to build an object file
+src/Parser/parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/src/Parser/parser.cpp.o
+.PHONY : src/Parser/parser.cpp.o
+
+src/Parser/parser.i: src/Parser/parser.cpp.i
+.PHONY : src/Parser/parser.i
+
+# target to preprocess a source file
+src/Parser/parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/src/Parser/parser.cpp.i
+.PHONY : src/Parser/parser.cpp.i
+
+src/Parser/parser.s: src/Parser/parser.cpp.s
+.PHONY : src/Parser/parser.s
+
+# target to generate assembly for a file
+src/Parser/parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/parser.dir/build.make CMakeFiles/parser.dir/src/Parser/parser.cpp.s
+.PHONY : src/Parser/parser.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... parser"
+	@echo "... src/Parser/parser.o"
+	@echo "... src/Parser/parser.i"
+	@echo "... src/Parser/parser.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

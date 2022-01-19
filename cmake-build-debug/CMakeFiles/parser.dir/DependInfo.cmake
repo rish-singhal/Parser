@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/rishabhsinghal/work/solidity/parser/src/Parser/parser.cpp" "/Users/rishabhsinghal/work/solidity/parser/cmake-build-debug/CMakeFiles/parser.dir/src/Parser/parser.cpp.o"
   "/Users/rishabhsinghal/work/solidity/parser/src/main.cpp" "/Users/rishabhsinghal/work/solidity/parser/cmake-build-debug/CMakeFiles/parser.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

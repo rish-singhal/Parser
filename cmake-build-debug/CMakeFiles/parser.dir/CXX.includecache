@@ -6,7 +6,41 @@
 
 #IncludeRegexTransform: 
 
+/Users/rishabhsinghal/work/solidity/parser/src/AST/evaluateAST.h
+node.h
+/Users/rishabhsinghal/work/solidity/parser/src/AST/node.h
+string
+-
+
+/Users/rishabhsinghal/work/solidity/parser/src/AST/node.h
+memory
+-
+
+/Users/rishabhsinghal/work/solidity/parser/src/Parser/parser.h
+../AST/node.h
+/Users/rishabhsinghal/work/solidity/parser/src/AST/node.h
+memory
+-
+string
+-
+
 /Users/rishabhsinghal/work/solidity/parser/src/main.cpp
+solver.h
+/Users/rishabhsinghal/work/solidity/parser/src/solver.h
 iostream
+-
+string
+-
+utility
+-
+
+/Users/rishabhsinghal/work/solidity/parser/src/solver.h
+./AST/evaluateAST.h
+/Users/rishabhsinghal/work/solidity/parser/src/AST/evaluateAST.h
+./Parser/parser.h
+/Users/rishabhsinghal/work/solidity/parser/src/Parser/parser.h
+string
+-
+memory
 -
 
