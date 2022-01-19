@@ -10,4 +10,5 @@ CMakeFiles/parser.dir/src/main.cpp.o: \
  ../src/AST/node.h \
  ../src/Parser/parser.h \
  ../src/main.cpp \
- ../src/solver.h
+ ../src/solver.h \
+ ../tests/test.h

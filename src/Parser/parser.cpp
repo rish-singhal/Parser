@@ -37,7 +37,7 @@ bool Parser::factor(std::unique_ptr<ASTNode>& head)
         if (tokens[m_position] == ')')
             return advance();
 
-        return false; // unbalanced parenthesis
+        return true; // unbalanced parenthesis
     }
 
     return false;

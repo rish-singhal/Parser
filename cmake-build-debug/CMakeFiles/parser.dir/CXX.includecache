@@ -27,6 +27,8 @@ string
 /Users/rishabhsinghal/work/solidity/parser/src/main.cpp
 solver.h
 /Users/rishabhsinghal/work/solidity/parser/src/solver.h
+../tests/test.h
+/Users/rishabhsinghal/work/solidity/parser/tests/test.h
 iostream
 -
 string
@@ -43,4 +45,8 @@ string
 -
 memory
 -
+
+/Users/rishabhsinghal/work/solidity/parser/tests/test.h
+../src/solver.h
+/Users/rishabhsinghal/work/solidity/parser/src/solver.h
 

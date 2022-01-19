@@ -98,6 +98,9 @@
 		<Unit filename="/Users/rishabhsinghal/work/solidity/parser/src/solver.h">
 			<Option target="parser"/>
 		</Unit>
+		<Unit filename="/Users/rishabhsinghal/work/solidity/parser/tests/test.h">
+			<Option target="parser"/>
+		</Unit>
 		<Unit filename="/Users/rishabhsinghal/work/solidity/parser/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
