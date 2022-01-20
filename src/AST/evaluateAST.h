@@ -6,6 +6,7 @@
 
 const std::string operators = "+-/*";
 
+// returns isError: bool, resulting value: double
 std::pair<bool, double> evaluateAST(const std::unique_ptr<ASTNode>& node)
 {
     if (node)
