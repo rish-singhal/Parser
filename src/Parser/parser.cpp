@@ -1,5 +1,6 @@
 #include "parser.h"
 
+// returns isError: bool
 bool Parser::advance()
 {
     m_position++;
@@ -14,13 +15,15 @@ bool Parser::advance()
 };
 
 // factor -> '0-9'
-//        -> LPAREN expr RPAREN
+//        -> LPAREN expression RPAREN
+// returns isError: bool
 bool Parser::factor(std::unique_ptr<ASTNode>& head)
 {
+    assert(m_position < (uint32_t) tokens.size());
     if (std::isdigit(tokens[m_position]))
     {
-        auto tempNode = std::make_unique<ASTNode>(tokens[m_position]);
-        head = std::move(tempNode);
+        auto temporaryNode = std::make_unique<ASTNode>(tokens[m_position]);
+        head = std::move(temporaryNode);
         return advance();
     }
 
@@ -30,10 +33,11 @@ bool Parser::factor(std::unique_ptr<ASTNode>& head)
         if (isError)
             return isError;
 
-        isError = expr(head);
+        isError = expression(head);
         if (isError)
             return isError;
 
+        assert(m_position < (uint32_t) tokens.size());
         if (tokens[m_position] == ')')
             return advance();
 
@@ -44,6 +48,7 @@ bool Parser::factor(std::unique_ptr<ASTNode>& head)
 };
 
 // term -> factor ((*|/) factor)*
+// returns isError: bool
 bool Parser::term(std::unique_ptr<ASTNode>& head)
 {
     auto leftNode = std::make_unique<ASTNode>();
@@ -52,29 +57,32 @@ bool Parser::term(std::unique_ptr<ASTNode>& head)
     if (isError)
         return isError;
 
+    assert(m_position < (uint32_t) tokens.size());
     while (tokens[m_position] == '*' || tokens[m_position] == '/')
     {
-        auto tempNode = std::make_unique<ASTNode>(tokens[m_position]);
-        tempNode->leftChild = std::move(leftNode);
+        auto temporaryNode = std::make_unique<ASTNode>(tokens[m_position]);
+        temporaryNode->leftChild = std::move(leftNode);
 
         isError = advance();
         if (isError)
             return isError;
 
-        isError = factor(tempNode->rightChild);
+        isError = factor(temporaryNode->rightChild);
         if (isError)
             return isError;
 
-        leftNode = std::move(tempNode);
+        leftNode = std::move(temporaryNode);
     }
 
     head = std::move(leftNode);
     return false;
 };
 
-// expr -> term ((+|-) term)*
-bool Parser::expr(std::unique_ptr<ASTNode>& head)
+// expression -> term ((+|-) term)*
+// returns isError: bool
+bool Parser::expression(std::unique_ptr<ASTNode>& head)
 {
+    assert(m_position < (uint32_t) tokens.size());
     if (tokens[m_position] == '$')
         return false;
 
@@ -83,6 +91,7 @@ bool Parser::expr(std::unique_ptr<ASTNode>& head)
     if (isError)
         return isError;
 
+    assert(m_position < (uint32_t) tokens.size());
     while (tokens[m_position] == '+' || tokens[m_position] == '-')
     {
         auto tempNode = std::make_unique<ASTNode>(tokens[m_position]);
@@ -103,6 +112,7 @@ bool Parser::expr(std::unique_ptr<ASTNode>& head)
     return false;
 };
 
+// returns isError: bool, pointer to the head node of AST
 std::pair<bool, std::unique_ptr<ASTNode>> Parser::parseAST()
 {
     std::unique_ptr<ASTNode> head = std::make_unique<ASTNode>();
@@ -114,12 +124,13 @@ std::pair<bool, std::unique_ptr<ASTNode>> Parser::parseAST()
     if (isError)
         return {isError, std::move(head)};
 
-    isError = expr(head);
+    isError = expression(head);
     if (isError)
         return {isError, std::move(head)};
 
     assert(m_position < (uint32_t) tokens.size());
 
+    // checks if the end of input is reached
     if (tokens[m_position] != '$')
         return {true, std::move(head)};
 

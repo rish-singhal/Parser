@@ -11,10 +11,9 @@ std::pair<bool, double> evaluateAST(const std::unique_ptr<ASTNode>& node)
     if (node)
     {
         if (std::isdigit(node->token))
-        {
             return {false, node->token - '0'};
-        }
-        else if (operators.find(node->token) != std::string::npos)
+
+        if (operators.find(node->token) != std::string::npos)
         {
             auto [leftIsError, leftValue] = evaluateAST(node->leftChild);
             auto [rightIsError, rightValue] = evaluateAST(node->rightChild);
