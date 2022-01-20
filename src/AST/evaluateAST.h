@@ -29,7 +29,7 @@ std::pair<bool, double> evaluateAST(const std::unique_ptr<ASTNode>& node)
             if (node->token == '-')
                 return {isError, leftValue - rightValue};
 
-            return {false, 0};
+            assert(true);
         }
     }
 
