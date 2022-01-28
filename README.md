@@ -1,4 +1,4 @@
-# Parser Task
+# Tree-walk Interpreter
 
 This repository contains my implementation of the [task](https://gist.github.com/chriseth/be1f936b6a86d4202b3556ed6f73f94c).
 
