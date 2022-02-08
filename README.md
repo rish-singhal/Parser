@@ -1,6 +1,6 @@
 # Tree-walk Interpreter
 
-This repository contains my implementation of the [task](https://gist.github.com/chriseth/be1f936b6a86d4202b3556ed6f73f94c).
+A tree-walk interpreter for evaluating algebraic expressions which uses single digits `0-9` and `+-/*()` lexemes by building Abstract Syntax Tree and error handling.
 
 ---
 
